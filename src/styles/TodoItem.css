@@ -18,6 +18,7 @@ p {
 }
 span {
     padding: 1em;
+    cursor: pointer;
 }
 span:last-child {
     position: relative;

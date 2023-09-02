@@ -1,13 +1,13 @@
 import '../styles/TodoItem.css'
 
-function TodoItem ({ text, completed }) {
+function TodoItem ({ text, completed, onCompleted, onDeleteTodo }) {
   const className = completed ? 'lineThrough' : ''
   return (
     <>
       <li>
-        <span>{completed ? '✅' : '⭕'}</span>
+        <span onClick={onCompleted}>{completed ? '✅' : '⭕'}</span>
         <p className={className}>{text}</p>
-        <span>❌</span>
+        <span onClick={onDeleteTodo}>❌</span>
       </li>
     </>
   )
