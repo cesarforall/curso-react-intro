@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { TodoCounter } from './components/TodoCounter'
 import { TodoSearch } from './components/TodoSearch'
 import { TodoList } from './components/TodoList'
@@ -9,16 +11,25 @@ const TODOS = [
   { text: 'primer todo', completed: true },
   { text: 'segundo todo', completed: true },
   { text: 'tercer todo', completed: false },
-  { text: 'cuarto todo', completed: false }
+  { text: 'cuarto todo', completed: false },
+  { text: 'quinto todo', completed: true }
 ]
 
 function App () {
+  const [todos, setTodos] = useState(TODOS)
+  const [searchValue, setSearchValue] = useState('')
+
+  const handleTodoSearchChange = (event) => {
+    setSearchValue(event.target.value)
+  }
   const reducer = (accumulator, currentValue) => {
     const isCompleted = currentValue.completed === true ? 1 : 0
     return accumulator + isCompleted
   }
-  const completedTodos = TODOS.reduce(reducer, 0)
-  const totalTodos = TODOS.length
+  const completedTodos = todos.reduce(reducer, 0)
+
+  const totalTodos = todos.length
+  const filteredTodos = todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase()))
 
   return (
     <div className='App'>
@@ -27,9 +38,9 @@ function App () {
       </header>
       <main>
         <TodoCounter completed={completedTodos} total={totalTodos} />
-        <TodoSearch />
+        <TodoSearch searchValue={searchValue} onTodoSearchChange={handleTodoSearchChange} />
         <TodoList>
-          {TODOS.map(({ text, completed }) => <TodoItem key={text} text={text} completed={completed} />)}
+          {filteredTodos.map(({ text, completed }) => <TodoItem key={text} text={text} completed={completed} />)}
         </TodoList>
       </main>
     </div>
