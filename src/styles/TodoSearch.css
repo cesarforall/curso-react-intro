@@ -13,11 +13,10 @@ input {
 
 input:hover {
     border-style: none;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 1px 1px rgba(25, 135, 182, 0.3);
 }
 
 input:focus-visible {
     border: none;
-    outline: none;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    outline-color: rgb(25, 135, 182);
 }
