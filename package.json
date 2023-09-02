@@ -15,12 +15,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "standard": "standard --fix"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "./node_modules/standard/eslintrc.json"
     ]
   },
   "browserslist": {
@@ -37,7 +39,9 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "standard": "^17.1.0"
+  },
   "author": "Cesar Almeida <cesaralmeida89@gmail.com>",
   "license": "MIT"
 }
