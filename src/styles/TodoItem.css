@@ -13,6 +13,9 @@ p {
     font-weight: 400;
     text-align: start;
 }
+.lineThrough {
+    text-decoration: line-through;
+}
 span {
     padding: 1em;
 }

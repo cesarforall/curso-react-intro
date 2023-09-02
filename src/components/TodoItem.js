@@ -1,11 +1,12 @@
 import '../styles/TodoItem.css'
 
 function TodoItem ({ text, completed }) {
+  const className = completed ? 'lineThrough' : ''
   return (
     <>
       <li>
         <span>{completed ? '✅' : '⭕'}</span>
-        <p>{text}</p>
+        <p className={className}>{text}</p>
         <span>❌</span>
       </li>
     </>
