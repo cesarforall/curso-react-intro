@@ -1,0 +1,9 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 1em;
+    min-width: 100%;
+    max-width: 540px;
+    gap: 1em;
+}

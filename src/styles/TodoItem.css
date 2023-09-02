@@ -1,0 +1,22 @@
+li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+p {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: 400;
+    text-align: start;
+}
+span {
+    padding: 1em;
+}
+span:last-child {
+    position: relative;
+    top: -2em;
+}
