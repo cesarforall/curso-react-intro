@@ -17,24 +17,27 @@ import './App.css'
 // localStorage.setItem('TODOS_V1', JSON.stringify(TODOS))
 
 function App () {
-  const localStorageTODOS = localStorage.getItem('TODOS_V1')
-  let parsedTODOS = []
+  function useLocalStorage (itemKey, initialValue) {
+    const localStorageItem = localStorage.getItem(itemKey)
+    let parsedItem
 
-  if (!localStorageTODOS) {
-    parsedTODOS = []
-    localStorage.setItem('TODOS_V1', JSON.stringify([]))
-  } else {
-    parsedTODOS = JSON.parse(localStorageTODOS)
+    if (!localStorageItem) {
+      parsedItem = initialValue
+      localStorage.setItem(itemKey, initialValue)
+    } else {
+      parsedItem = JSON.parse(localStorageItem)
+    }
+    function saveItem (newItem) {
+      const stringifiedItem = JSON.stringify(newItem)
+      localStorage.setItem(itemKey, stringifiedItem)
+      setTodos(newItem)
+    }
+    return [parsedItem, saveItem]
   }
 
+  const [parsedTODOS, saveTodos] = useLocalStorage('TODOS_V1', [])
   const [todos, setTodos] = useState(parsedTODOS)
   const [searchValue, setSearchValue] = useState('')
-
-  function saveTodos (newTodos) {
-    const stringifiedTODOS = JSON.stringify(newTodos)
-    localStorage.setItem('TODOS_V1', stringifiedTODOS)
-    setTodos(newTodos)
-  }
 
   return (
     <div className='App'>
