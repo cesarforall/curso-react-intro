@@ -2,7 +2,7 @@ import { TodoItem } from './TodoItem'
 
 import '../styles/TodoList.css'
 
-function TodoList ({ todos, onTodosChange, searchValue }) {
+function TodoList ({ loading, error, todos, onTodosChange, searchValue }) {
   function deleteTodo (text) {
     const newTodos = [...todos]
     const todoIndex = todos.findIndex(todo => todo.text === text)
@@ -28,6 +28,8 @@ function TodoList ({ todos, onTodosChange, searchValue }) {
   })
   return (
     <ul>
+      {loading && "Cargando TODO's..."}
+      {error && "Ha habido un error en la carga de TODO's"}
       {filteredTodos}
     </ul>
   )

@@ -18,7 +18,13 @@ import './App.css'
 // localStorage.setItem('TODOS_V1', JSON.stringify(TODOS))
 
 function App () {
-  const [todos, saveTodos] = useLocalStorage('TODOS_V1', [])
+  const {
+    item: todos,
+    saveItem: saveTodos,
+    loading,
+    error
+  } = useLocalStorage('TODOS_V1', [])
+
   const [searchValue, setSearchValue] = useState('')
 
   return (
@@ -29,7 +35,7 @@ function App () {
       <main>
         <TodoCounter todos={todos} />
         <TodoSearch searchValue={searchValue} onSearchValueChange={setSearchValue} />
-        <TodoList todos={todos} onTodosChange={saveTodos} searchValue={searchValue} />
+        <TodoList loading={loading} error={error} todos={todos} onTodosChange={saveTodos} searchValue={searchValue} />
       </main>
     </div>
   )
