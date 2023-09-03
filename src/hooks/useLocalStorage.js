@@ -1,5 +1,15 @@
 import { useState, useEffect } from 'react'
 
+// const TODOS = [
+//   { text: 'primer todo', completed: true },
+//   { text: 'segundo todo', completed: true },
+//   { text: 'tercer todo', completed: false },
+//   { text: 'cuarto todo', completed: false },
+//   { text: 'quinto todo', completed: true }
+// ]
+
+// localStorage.setItem('TODOS_V1', JSON.stringify(TODOS))
+
 function useLocalStorage (itemKey, initialValue) {
   const [item, setItem] = useState(initialValue)
   const [loading, setLoading] = useState(true)

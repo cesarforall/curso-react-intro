@@ -1,6 +1,14 @@
+import { useContext } from 'react'
+import { TodoContext } from '../contexts/TodoContext'
+
 import '../styles/TodoSearch.css'
 
-function TodoSearch ({ searchValue, onSearchValueChange }) {
+function TodoSearch () {
+  const {
+    searchValue,
+    setSearchValue
+  } = useContext(TodoContext)
+
   return (
     <>
       <form>
@@ -8,7 +16,7 @@ function TodoSearch ({ searchValue, onSearchValueChange }) {
           type='text'
           value={searchValue}
           placeholder='Hacer la compra'
-          onChange={(e) => onSearchValueChange(e.target.value)}
+          onChange={(e) => setSearchValue(e.target.value)}
         />
       </form>
     </>

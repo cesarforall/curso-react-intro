@@ -1,22 +1,19 @@
+import { useContext } from 'react'
+import { TodoContext } from '../contexts/TodoContext'
+
 import { TodoItem } from './TodoItem'
 
 import '../styles/TodoList.css'
 
-function TodoList ({ loading, error, todos, onTodosChange, searchValue }) {
-  function deleteTodo (text) {
-    const newTodos = [...todos]
-    const todoIndex = todos.findIndex(todo => todo.text === text)
-    newTodos.splice(todoIndex, 1)
-    onTodosChange(newTodos)
-  }
-
-  function checkTodo (text) {
-    const newTodos = [...todos]
-    const todoIndex = todos.findIndex(todo => todo.text === text)
-    const todo = newTodos[todoIndex]
-    todo.completed = !todo.completed
-    onTodosChange(newTodos)
-  }
+function TodoList () {
+  const {
+    loading,
+    error,
+    todos,
+    searchValue,
+    deleteTodo,
+    checkTodo
+  } = useContext(TodoContext)
 
   const filteredTodos = []
 

@@ -1,6 +1,10 @@
+import { useContext } from 'react'
+import { TodoContext } from '../contexts/TodoContext'
 import '../styles/TodoCounter.css'
 
-function TodoCounter ({ todos }) {
+function TodoCounter () {
+  const { todos } = useContext(TodoContext)
+
   const reducer = (accumulator, currentValue) => {
     const isCompleted = currentValue.completed === true ? 1 : 0
     return accumulator + isCompleted
