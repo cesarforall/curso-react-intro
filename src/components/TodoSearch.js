@@ -1,14 +1,14 @@
 import '../styles/TodoSearch.css'
 
-function TodoSearch ({ searchValue, onTodoSearchChange }) {
+function TodoSearch ({ searchValue, onSearchValueChange }) {
   return (
     <>
       <form>
         <input
           type='text'
-          placeholder='Hacer la compra'
-          onChange={onTodoSearchChange}
           value={searchValue}
+          placeholder='Hacer la compra'
+          onChange={(e) => onSearchValueChange(e.target.value)}
         />
       </form>
     </>
