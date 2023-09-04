@@ -4,6 +4,8 @@ import { TodoCounter } from './components/TodoCounter'
 import { TodoSearch } from './components/TodoSearch'
 import { TodoList } from './components/TodoList'
 import { Modal } from './components/Modal'
+import { CreateTodoButton } from './components/CreateTodoButton'
+import { TodoForm } from './components/TodoForm'
 
 function AppUI () {
   const { openModal } = useContext(TodoContext)
@@ -18,8 +20,13 @@ function AppUI () {
         <TodoList />
       </main>
       {
-        openModal && <Modal>Soy el modal</Modal>
+        openModal && (
+          <Modal>
+            <TodoForm />
+          </Modal>
+        )
       }
+      <CreateTodoButton />
     </div>
   )
 }

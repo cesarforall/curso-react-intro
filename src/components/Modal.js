@@ -1,8 +1,9 @@
 import { createPortal } from 'react-dom'
+import '../styles/Modal.css'
 
 function Modal ({ children }) {
   return createPortal(
-    <div>
+    <div className='Modal'>
       {children}
     </div>, document.getElementById('modal')
   )
