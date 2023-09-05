@@ -1,4 +1,60 @@
-# Getting Started with Create React App
+# Aplicación de Gestión de Tareas con React
+
+Este repositorio contiene una aplicación web de gestión de tareas desarrollada en React. El objetivo de este proyecto es demostrar mis habilidades como desarrollador Frontend y mi capacidad para crear una interfaz de usuario interactiva y funcional.
+
+## Características Principales
+
+- Mostrar una lista de tareas.
+- Filtrar tareas por estado (completadas, pendientes, todas).
+- Añadir nuevas tareas.
+- Marcar tareas como completadas.
+- Eliminar todas las tareas.
+
+## Persistencia de Datos
+
+Esta aplicación utiliza `localStorage` para persistir los datos de las tareas en el navegador del usuario. Esto significa que incluso si cierras la aplicación y la vuelves a abrir, tus tareas seguirán estando disponibles.
+
+## Demo
+
+Puedes ver una demostración en vivo de la aplicación [aquí](https://cesarforall.github.io/todo-machine/).
+
+## Capturas de Pantalla
+
+![Alt text](image.png)
+
+
+## Tecnologías Utilizadas
+
+- React
+- JavaScript
+- HTML5
+- CSS3
+
+## Instalación
+
+Sigue estos pasos para ejecutar la aplicación en tu entorno local:
+
+1. Clona este repositorio:
+
+   ```bash
+   git clone https://github.com/cesarforall/todo-machine.git
+   ```
+
+2. Navega al directorio del proyecto:
+
+    ```bash
+    cd todo-machine
+    ```
+
+3. Instala las dependencias:
+
+    ```bash
+    npm install
+    ```
+
+4. Continúa con 👇
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
