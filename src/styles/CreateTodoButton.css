@@ -1,0 +1,14 @@
+.CreateTodoButton {
+    width: 3em;
+    height: 3em;
+    background-color: #282c34;
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 1em;
+}
+
+.CreateTodoButton:hover {
+    background-color: #282c34ba;
+    cursor: pointer;
+}

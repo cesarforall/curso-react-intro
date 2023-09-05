@@ -45,10 +45,11 @@
 }
 
 .TodoForm-button--add {
-    background-color: rgba(0, 255, 255, 0.727);
+    background-color: #282c34;
+    color: white;
 }
 
 .TodoForm-button--add:hover {
-    background-color: aqua;
+    background-color: #282c34ba;
     cursor: pointer;
 }
