@@ -18,12 +18,12 @@ function useLocalStorage (itemKey, initialValue) {
   useEffect(() => {
     setTimeout(() => {
       try {
-        const localStorageItem = localStorage.getItem(itemKey)
+        const localStorageItem = window.localStorage.getItem(itemKey)
         let parsedItem
 
         if (!localStorageItem) {
           parsedItem = initialValue
-          localStorage.setItem(itemKey, JSON.stringify(initialValue))
+          window.localStorage.setItem(itemKey, JSON.stringify(initialValue))
         } else {
           parsedItem = JSON.parse(localStorageItem)
           setLoading(false)
@@ -38,7 +38,7 @@ function useLocalStorage (itemKey, initialValue) {
 
   function saveItem (newItem) {
     const stringifiedItem = JSON.stringify(newItem)
-    localStorage.setItem(itemKey, stringifiedItem)
+    window.localStorage.setItem(itemKey, stringifiedItem)
     setItem(newItem)
   }
   return {

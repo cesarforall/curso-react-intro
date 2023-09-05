@@ -1,6 +1,7 @@
 .TodoForm-form {
     display: flex;
     flex-direction: column;
+    max-width: 540px;
     gap: 0.7em;
     padding: 2em;
     border-radius: 0.2em;

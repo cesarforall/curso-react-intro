@@ -6,7 +6,7 @@ import '../styles/CreateTodoButton.css'
 const CreateTodoButton = () => {
   const { setOpenModal } = useContext(TodoContext)
   return (
-    <button className='CreateTodoButton' onClick={() => setOpenModal(true)}>+</button>
+    <button className='CreateTodoButton' onClick={() => setOpenModal(true)}>Añadir TODO</button>
   )
 }
 

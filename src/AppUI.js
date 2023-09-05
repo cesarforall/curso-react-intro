@@ -18,6 +18,7 @@ function AppUI () {
         <TodoCounter />
         <TodoSearch />
         <TodoList />
+        <CreateTodoButton />
       </main>
       {
         openModal && (
@@ -26,7 +27,6 @@ function AppUI () {
           </Modal>
         )
       }
-      <CreateTodoButton />
     </div>
   )
 }
